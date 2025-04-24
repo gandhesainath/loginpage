@@ -32,6 +32,7 @@ export default function SignUp() {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [captchaError, setCaptchaError] = useState("");
   const [termsError, setTermsError] = useState("");
+  const [role, setRole] = useState("");
 
   const handleRefreshCaptcha = () => {
     setCaptcha(generateCaptcha());
@@ -110,16 +111,16 @@ export default function SignUp() {
             onChange={(e) => setFullName(e.target.value)}
           />
           <form onSubmit={handleSubmit}>
-            <Input
-              type="email"
-              placeholder="Email"
-              className={cn("mb-1", emailError && "border-red-500")}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            {emailError && (
-              <p className="text-red-500 text-sm mb-3">{emailError}</p>
-            )}
+          <Input
+            type="email"
+            placeholder="Email"
+            className={cn("mb-5", emailError && "border-red-500")}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          {emailError && (
+            <p className="text-red-500 text-sm mb-3">{emailError}</p>
+          )}
 
             <div className="flex gap-3 mb-5">
               <select
